@@ -1,0 +1,31 @@
+{
+  "name": "json-schema-orm",
+  "version": "0.1.0",
+  "description": "Object-relational mapping from JSON Schema",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha -R spec tests/test-*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Sendanor/json-schema-orm.git"
+  },
+  "keywords": [
+    "json",
+    "schema",
+    "orm",
+    "object",
+    "relation",
+    "mapping",
+    "constructor"
+  ],
+  "dependencies": {
+    "nor-is": "*",
+	"tv4": "*"
+  },
+  "author": "Jaakko-Heikki Heusala <jheusala@iki.fi>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sendanor/json-schema-orm/issues"
+  }
+}
