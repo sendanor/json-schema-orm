@@ -2,7 +2,6 @@
 
 var SchemaObject = require('../lib/SchemaObject.js');
 var assert = require('assert');
-var Q = require('q');
 
 /* */
 describe('SchemaObject', function(){

@@ -1,0 +1,46 @@
+{
+	"title": "Data object test",
+	"oneOf": [
+		{ "$ref": "#/definitions/Integer" }
+	],
+	"definitions": {
+		"Integer": {
+			"oneOf": [
+				{"type": "string", "pattern": "^[0-9]+$"},
+				{"type":"number"}
+			]
+		},
+		"Double": {
+			"type": "object",
+			"oneOf": [
+				{"type":"string", "pattern":"^[0-9]+\\.[0-9]+$"},
+				{"type":"number"}
+			]
+		},
+		"Boolean": {
+			"type": "object",
+			"oneOf": [
+				{ "type": "string", "pattern": "^[01]$"},
+				{ "type": "boolean" }
+			]
+		},
+		"Range": {
+			"$ref": "#/definitions/Double"
+		},
+		"Time": {
+			"$ref": "#/definitions/Double"
+		},
+		"Weekday": {
+			"$ref": "#/definitions/Integer"
+		},
+		"Price": {
+			"$ref": "#/definitions/Double"
+		},
+		"Minutes": {
+			"$ref": "#/definitions/Integer"
+		},
+		"ID": {
+			"$ref": "#/definitions/Integer"
+		}
+	}
+}
