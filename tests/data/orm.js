@@ -14,12 +14,11 @@ module.exports = {
 		}
 	},
 	'methods': {
-		/*
-		'Restaurant': function(Restaurant, types) {
-			Restaurant.prototype.test = function() {
+		'Point': function(Point, types) {
+			Point.prototype.toString = function() {
+				return '[object Point('+ this.x + ',' + this.y + ')]';
 			};
 		}
-		*/
 	}
 };
 /* EOF */
