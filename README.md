@@ -24,7 +24,7 @@ Let's say you have JavaScript/JSON objects like these:
 }
 ```
 
-And [JSON schema](2013-09-02T05:48:41) for that data:
+And [JSON schema](http://json-schema.org/) for that data:
 
 ```jsonschema
 {
