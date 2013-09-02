@@ -26,7 +26,7 @@ Let's say you have JavaScript/JSON objects like these:
 
 And [JSON schema](http://json-schema.org/) for that data:
 
-```jsonschema
+```json
 {
 	"title": "Point Collection JSON Schema",
 	"oneOf": [
