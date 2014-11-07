@@ -19,7 +19,7 @@ module.exports = function(build_opts) {
 
 	var _user_defined_constructors = _user_defined.constructors || {};
 	var _user_defined_methods = _user_defined.methods || {};
-	
+
 	if(!is.obj(_schema)) { throw new TypeError('schema is not valid'); }
 	if(!is.obj(_schema.definitions)) { throw new TypeError('schema is missing definitions'); }
 
@@ -38,11 +38,11 @@ module.exports = function(build_opts) {
 
 	/** Creates a new constructor unless it's created already */
 	function create_constructor(type_name) {
-		
+
 		if(Object.prototype.hasOwnProperty.call(constructors, type_name)) {
 			return constructors[type_name];
 		}
-		
+
 		if(!( Object.prototype.hasOwnProperty.call(_schema.definitions, type_name) && is.def(_schema.definitions[type_name]) )) {
 			throw new TypeError("No definition for " + type_name);
 		}
@@ -66,10 +66,10 @@ module.exports = function(build_opts) {
 			// Check opts validity
 			var validity = SchemaObject.validate(opts, copy_definition);
 			if(!validity.valid) { throw new TypeError("bad argument: " + util.inspect(validity) ); }
-			
+
 			// Call parent constructors
 			ParentType.call(self, opts);
-			
+
 			// Call custom constructors
 			//util.debug( util.inspect( _user_defined_constructors ));
 			if(Object.prototype.hasOwnProperty.call(_user_defined_constructors, type_name)) {
@@ -79,7 +79,7 @@ module.exports = function(build_opts) {
 				}
 				//util.debug( util.inspect( tmp ) );
 			}
-			
+
 			// Setup getters and setters if schema has properties
 			//util.debug( "\ndefinition = \n----\n" + util.inspect( definition ) + "\n----\n\n" );
 			if(definition && definition.properties) {
@@ -107,7 +107,7 @@ module.exports = function(build_opts) {
 			'	_constructor.call(this, this, opts);',
 			'};'
 		];
-		
+
 		var Type = (new Function('_constructor', 'return '+code.join('\n')))(_constructor);
 
 		util.inherits(Type, ParentType);
@@ -125,12 +125,12 @@ module.exports = function(build_opts) {
 				_user_defined_methods[type_name].call(context, Type, context);
 			}
 		}
-		
+
 		post_user_defines({'constructors':constructors, 'schema':_schema});
 
 		return constructors[type_name];
 	}
-	
+
 	Object.keys(_schema.definitions).forEach(create_constructor);
 
 	return constructors;
