@@ -1,8 +1,8 @@
 {
   "name": "json-schema-orm",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Object-relational mapping from JSON Schema",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "mocha -R spec tests/test-*.js"
   },
@@ -21,8 +21,9 @@
     "constructor"
   ],
   "dependencies": {
-    "nor-is": "*",
-	"tv4": "git://github.com/geraintluff/tv4.git#master"
+    "nor-debug" : ">= 0.1.45 < 1.2.0",
+    "nor-is" : ">= 0.1.15 < 1.2.0",
+    "tv4"    : ">= 1.1.4  < 1.2.0"
   },
   "author": "Jaakko-Heikki Heusala <jheusala@iki.fi>",
   "license": "MIT",
